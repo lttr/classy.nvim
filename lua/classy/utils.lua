@@ -14,7 +14,7 @@ M.replace_line = function(line, start_col, end_col, insert_str)
 end
 
 M.get_node_text = function(node)
-  return vim.treesitter.query.get_node_text(node, 0)
+  return vim.treesitter.get_node_text(node, 0)
 end
 
 M.is_jsx = function(lang)
@@ -34,7 +34,7 @@ end
 M.is_not_element = function(node, lang)
   if M.is_jsx(lang) then
     return node:type() ~= "jsx_element"
-      and node:type() ~= "jsx_self_closing_element"
+        and node:type() ~= "jsx_self_closing_element"
   else
     return node:type() ~= "element"
   end
