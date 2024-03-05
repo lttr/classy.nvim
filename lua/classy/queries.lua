@@ -32,7 +32,7 @@ M.get_tag_query = function(lang)
     ]]
       or [[
     ;; html
-    ([( start_tag ) ( self_closing_tag ) ] @tag)
+    ([( start_tag ) ( self_closing_tag ) ( tag_name ) ] @tag)
     ]]
 
   local query = vim.treesitter.query.parse(lang, query_text)
